@@ -45,7 +45,16 @@
           $('#message').val('');
           return false;
         });
+        
         socket.on('chat message', function(msg){
+          
+          $('#messages').append($('<li class="list-group-item">').text(msg));
+          
+          $(".card-body").scrollTop($(".card-body")[0].scrollHeight);
+          //window.scrollTo(0, document.body.scrollHeight);
+        });
+
+        socket.on('admin message', function(msg){
           
           $('#messages').append($('<li class="list-group-item">').text(msg));
           
