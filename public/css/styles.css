@@ -6,6 +6,11 @@
   margin-bottom:20px;
 }
 
+.card-body {
+  height: 430px;
+  overflow-y: scroll;
+}
+
 .send-btn {
   float:left;
   height:50px;
@@ -17,12 +22,20 @@
 .form-cnt {
   margin-left:2%;
   margin-right:2%;
-  position:fixed;
+  position: fixed;
   bottom:10px;
   width:96%;
 }
 
 textarea {
-  max-height:150px;
+  max-height:100px;
 }
 
+img {
+  border-radius:5px;
+}
+
+.btn {
+  margin:0px 10px;
+  margin-bottom:20px;
+}
