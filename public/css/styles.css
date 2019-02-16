@@ -1,0 +1,28 @@
+#message {
+  width:100%;
+  float:left;
+  min-height:80px;
+  border:groove;
+  margin-bottom:20px;
+}
+
+.send-btn {
+  float:left;
+  height:50px;
+  border:groove;
+  min-width:15%;
+  margin-left:0px;
+}
+
+.form-cnt {
+  margin-left:2%;
+  margin-right:2%;
+  position:fixed;
+  bottom:10px;
+  width:96%;
+}
+
+textarea {
+  max-height:150px;
+}
+

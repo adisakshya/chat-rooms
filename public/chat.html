@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/ionicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/chat.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+
+<body><div class="card fluid">
+    <div class="card-header">
+        <h6 class="mb-0">Chat Room</h6>
+    </div>
+    <div class="card-body" style="height:233px;">
+        <ul class="list-group" id="messages">
+          
+
+        </ul>        
+    </div>
+</div>
+<div class="form-cnt fluid">
+   <form id="message-field">
+      <input placeholder="Message" id="message" />
+      <button id="send_message" class="send-btn btn btn-light" type="submit">Send</button>
+   </form>
+</div>
+    
+    <script id="message-template" type="text/template">
+        <li class="list-group-item" style="margin-bottom:6px;">
+                <div class="media">
+                    <div></div>
+                    <div class="media-body">
+                        <div class="media" style="overflow:visible;">
+                            <div class="media-body" style="overflow:visible;">
+                                
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p><a href="#">{{username}}:</a> {{textmessage}}<br><small class="text-muted">{{date}} @ {{time}}</small></p>
+                                    </div>
+                                </div>
+                                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li> 
+    </script>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/mustache.js"></script>
+    
+    <script>
+      $(function () {
+        var socket = io();
+        $('form').submit(function(){
+          socket.emit('chat message', $('#message').val());
+          $('#message').val('');
+          return false;
+        });
+        socket.on('chat message', function(msg){
+          
+          $('#messages').append($('<li>').text(msg));
+          //window.scrollTo(0, document.body.scrollHeight);
+        });
+      });
+    </script>
+
+    
+</body>
+
+</html>
