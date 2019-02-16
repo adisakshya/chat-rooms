@@ -10,10 +10,10 @@ chat-rooms is a open chatroom written in python 3.7
 comming soon
 ```
 
-## Screenshot
-
-# ![chatrooms](https://raw.githubusercontent.com/adisakshya/chatrooms/master/screenshot.jpg)
-
+## Screenshots
+```
+comming soon
+```
 
 Feel free to contribute to fix any problems, or to submit an issue!
 
