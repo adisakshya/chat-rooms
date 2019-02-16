@@ -19,7 +19,10 @@ http.listen(5000, function(){
 
 io.on('connection', function(socket){
 	console.log('New User Connected');
+
 	socket.username = 'Adi';
+	io.emit('admin message','Admin: Welcome ' + socket.username + ' !');
+	
 	// listen on new message
 	socket.on('chat message', function(message){
 		// broadcast new message
