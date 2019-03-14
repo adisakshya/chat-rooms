@@ -7,8 +7,8 @@
 }
 
 .card-body {
-  height: 430px;
-  overflow-y: scroll;
+  height:430px;
+  overflow-y:scroll;
 }
 
 .send-btn {
@@ -22,13 +22,54 @@
 .form-cnt {
   margin-left:2%;
   margin-right:2%;
-  position: fixed;
-  bottom:10px;
+  position:fixed;
+  top:77%;
+  bottom:0px;
   width:96%;
 }
 
 textarea {
   max-height:100px;
+}
+
+img {
+  border-radius:5px;
+}
+
+.btn {
+  margin:0px 10px;
+  margin-bottom:20px;
+}
+
+.username-cont {
+  display:inline;
+  float:right;
+}
+
+.user-field {
+  display:inline;
+  width:50%;
+}
+
+.chat-heading {
+  display:inline;
+}
+
+.user-heading {
+  font-weight:500;
+  font-size:20px;
+}
+
+.message-input {
+  max-width:82%;
+}
+
+.send-btn {
+  max-width:18%;
+}
+
+img {
+  border-radius:5px;
 }
 
 img {
