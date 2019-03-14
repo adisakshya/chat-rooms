@@ -1,24 +1,39 @@
-$(function(){
+$(function () {
+    var socket = io();
 
-	// make connection
-	var socket = io.connect('http://localhost:3000');
+    $('form').submit(function(){
+        socket.emit('chat message', $('#username').val() + ': ' + $('#message').val());
+        $('#message').val('');
+        return false;
+    });
+        
+    socket.on('chat message', function(msg){
+          
+    $('#messages').append($('<li class="list-group-item">').text(msg));
+          
+    $(".card-body").scrollTop($(".card-body")[0].scrollHeight);
+    //window.scrollTo(0, document.body.scrollHeight);
+    });
 
-	// inputs
-	var message = $("#message");
-	var template = $("#message-template").html();
-	var send_message = $("#send_message");
-	var chatroom = $("#chatroom");
-	//var feedback = $("#feedback")
+    socket.on('admin message', function(msg){
+    
+    msg = 'Admin: Welcome ' + $('#username').val() + ' !';
+    $('#messages').append($('<li class="list-group-item">').text(msg));
+          
+    $(".card-body").scrollTop($(".card-body")[0].scrollHeight);
+    //window.scrollTo(0, document.body.scrollHeight);
+    });
+});
 
-	// emit message
-	send_message.click(function(){
-		socket.emit('chat message', {message : message.val()});
-	});
-
-	// listen on chat message
-	socket.on('chat message', function(data){
-		//feedback.html('');
-		message.val('');
-		chatroom.append(html);
-	});
+function check_username() {
+	user_name = $('#username').val();
+	if(user_name == "") {
+		alert('please enter username...');
+		document.getElementById('send_message').disabled = true;
+		return false;
+	}
+	else {
+		document.getElementById('send_message').disabled = false;
+		return false;
+	}
 };
