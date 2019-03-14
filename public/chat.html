@@ -13,19 +13,23 @@
 <body>
     <div class="card fluid">
     <div class="card-header">
-        <h6 class="mb-0">Chat Room</h6>
+        <h4 class="mb-0 chat-heading">Chat Room</h4>
+        <div class="username-cont">
+            <form>
+            <label class="user-heading">Your Username</label>
+            <input id="username" class="form-control user-field" type="username" name="username" value="Username" onchange="check_username()">
+            </form>
+        </div>
     </div>
     <div class="card-body">
         <ul class="list-group" id="messages">
-              
-
         </ul>        
     </div>
 </div>
 
 <div class="form-cnt fluid">
    <form id="message-field">
-      <input placeholder="Message" id="message" />
+      <input class="message-input" placeholder="Message" id="message"/>
       <button id="send_message" class="send-btn btn btn-light" type="submit">Send</button>
    </form>
 </div>
@@ -37,33 +41,6 @@
     <script src="js/chat.js"></script>
     <script src="js/mustache.js"></script>
     
-    <script>
-      $(function () {
-        var socket = io();
-        $('form').submit(function(){
-          socket.emit('chat message', $('#message').val());
-          $('#message').val('');
-          return false;
-        });
-        
-        socket.on('chat message', function(msg){
-          
-          $('#messages').append($('<li class="list-group-item">').text(msg));
-          
-          $(".card-body").scrollTop($(".card-body")[0].scrollHeight);
-          //window.scrollTo(0, document.body.scrollHeight);
-        });
-
-        socket.on('admin message', function(msg){
-          
-          $('#messages').append($('<li class="list-group-item">').text(msg));
-          
-          $(".card-body").scrollTop($(".card-body")[0].scrollHeight);
-          //window.scrollTo(0, document.body.scrollHeight);
-        });
-      });
-    </script>
-
 </body>
 
 </html>
