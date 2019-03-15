@@ -18,15 +18,14 @@ io.on('connection', function(socket){
 	socket.on('create', function(room) {
 		
 		socket.join(room);
+		io.in(room).emit('admin message', '');
 		console.log('New User Connected in ' + room);
 	});
 
-	io.emit('admin message', '');
-	
 	// listen on new message
-	socket.on('chat message', function(message){
+	socket.on('chat message', function(message, room){
 		// broadcast new message
-		io.emit('chat message', message);
+		io.in(room).emit('chat message', message);
 	});	
 });
 
@@ -34,8 +33,3 @@ io.on('connection', function(socket){
 http.listen(5000, function(){
 	console.log('listening on: 5000');
 });
-
-/*
-function alert_user() {
-	window.alert('room number is required...');
-}*/
