@@ -10,11 +10,16 @@ app.use(express.static(__dirname + '/public'));
 // routes
 app.get('/', function(req, res){
 	// res.sendFile(__dirname + '/public/chat.html');
-	res.sendFile(__dirname + '/public/chat.html');
+	res.sendFile(__dirname + '/public/login.html');
 });
 
 io.on('connection', function(socket){
-	console.log('New User Connected');
+	
+	socket.on('create', function(room) {
+		
+		socket.join(room);
+		console.log('New User Connected in ' + room);
+	});
 
 	io.emit('admin message', '');
 	
@@ -29,3 +34,8 @@ io.on('connection', function(socket){
 http.listen(5000, function(){
 	console.log('listening on: 5000');
 });
+
+/*
+function alert_user() {
+	window.alert('room number is required...');
+}*/
