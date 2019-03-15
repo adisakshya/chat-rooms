@@ -1,5 +1,18 @@
 $(function () {
-    var socket = io();
+    var socket = io().connect();
+    
+    var url_string = window.location.href;
+	var url = new URL(url_string);
+	var room_no = url.searchParams.get("room_no");
+	// console.log(c);
+    
+    if(room_no == '') {
+    	alert('room number required...');
+    	window.history.back();
+    	return false;
+    }    
+    socket.emit('create', room_no);
+    // alert(url_string);
 
     $('form').submit(function(){
         socket.emit('chat message', $('#username').val() + ': ' + $('#message').val());
