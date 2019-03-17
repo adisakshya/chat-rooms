@@ -1,82 +1,86 @@
-#message {
-  width:100%;
-  float:left;
-  min-height:80px;
-  border:groove;
-  margin-bottom:20px;
+.main-container {
+  background-image: url("star-sky.jpg");
 }
 
-.card-body {
-  height:430px;
-  overflow-y:scroll;
+footer {
+  text-align: center;
+} 
+
+p {
+  color: white;
 }
 
-.send-btn {
-  float:left;
-  height:50px;
-  border:groove;
-  min-width:15%;
-  margin-left:0px;
+a, a:hover {
+  color: white;
 }
 
-.form-cnt {
-  margin-left:2%;
-  margin-right:2%;
-  position:fixed;
-  top:77%;
-  bottom:0px;
-  width:96%;
+.login-dark {
+  height:640px;
+  background-size:cover;
+  position:relative;
 }
 
-textarea {
-  max-height:100px;
+.login-dark form {
+  max-width:320px;
+  width:90%;
+  background-color:#1e2833;
+  padding:40px;
+  border-radius:4px;
+  transform:translate(-50%, -50%);
+  position:absolute;
+  top:50%;
+  left:50%;
+  color:#fff;
+  box-shadow:3px 3px 4px rgba(0,0,0,0.2);
 }
 
-img {
-  border-radius:5px;
+.login-dark .illustration {
+  text-align:center;
+  padding:15px 0 20px;
+  font-size:100px;
+  color:#2980ef;
 }
 
-.btn {
-  margin:0px 10px;
-  margin-bottom:20px;
+.login-dark form .form-control {
+  background:none;
+  border:none;
+  border-bottom:1px solid #434a52;
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
 }
 
-.username-cont {
-  display:inline;
-  float:right;
+.login-dark form .btn-primary {
+  background:#214a80;
+  border:none;
+  border-radius:4px;
+  padding:11px;
+  box-shadow:none;
+  margin-top:26px;
+  text-shadow:none;
+  outline:none;
 }
 
-.user-field {
-  display:inline;
-  width:50%;
+.login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+  background:#214a80;
+  outline:none;
 }
 
-.chat-heading {
-  display:inline;
+.login-dark form .forgot {
+  display:block;
+  text-align:center;
+  font-size:12px;
+  color:#6f7a85;
+  opacity:0.9;
+  text-decoration:none;
 }
 
-.user-heading {
-  font-weight:500;
-  font-size:20px;
+.login-dark form .forgot:hover, .login-dark form .forgot:active {
+  opacity:1;
+  text-decoration:none;
 }
 
-.message-input {
-  max-width:82%;
-}
-
-.send-btn {
-  max-width:18%;
-}
-
-img {
-  border-radius:5px;
-}
-
-img {
-  border-radius:5px;
-}
-
-.btn {
-  margin:0px 10px;
-  margin-bottom:20px;
+.login-dark form .btn-primary:active {
+  transform:translateY(1px);
 }
