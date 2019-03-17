@@ -2,7 +2,7 @@
 
 var express = require('express');
 var app = express();			// function handler used to supply an HTTP server
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 var http = require('http').Server(app); // HTTP server
 var io = require('socket.io')(http);
 
