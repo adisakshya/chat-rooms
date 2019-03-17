@@ -24,6 +24,6 @@ comming soon
 
 Feel free to contribute to fix any problems, or to submit an issue!
 
-Distributed under the MIT license. See [LICENSE](https://github.com/adisakshya/chatrooms/blob/master/LICENSE) for more information.
+Distributed under the MIT license. See [LICENSE](https://github.com/adisakshya/chat-rooms/blob/master/LICENSE) for more information.
 
 Adisakshya – [Website](https://adisakshya.github.io)
