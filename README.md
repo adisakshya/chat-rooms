@@ -12,8 +12,10 @@ Download the repository using github or git eg.git clone https://github.com/adis
 
 ### Step 2: 
 Now just type
+
 `node app.js`
-and you have the chat-room active.
+
+and you have the chat-room active. on localhost:5000
 
 ## Screenshots
 ```
@@ -22,6 +24,6 @@ comming soon
 
 Feel free to contribute to fix any problems, or to submit an issue!
 
-Distributed under the MIT license. See [LICENSE](https://github.com/adisakshya/chatrooms/blob/master/LICENSE) for more information.
+Distributed under the MIT license. See [LICENSE](https://github.com/adisakshya/chat-rooms/blob/master/LICENSE) for more information.
 
 Adisakshya – [Website](https://adisakshya.github.io)

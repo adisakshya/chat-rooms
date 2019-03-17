@@ -8,30 +8,93 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="fonts/ionicons.min.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/users_list.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
-    <div class="card fluid">
-    <div class="card-header">
-        <h4 class="mb-0 chat-heading">Chat Room</h4>
-        <div class="username-cont">
-            <form>
-            <label class="user-heading">Your Username</label>
-            <input id="username" class="form-control user-field" type="username" name="username" value="Username" onchange="check_username()">
-            </form>
+
+<div class="fluid">    
+    
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="">
+    <div class="imgcontainer">
+      <img src="my-room.jpg" />
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="card">
+        <div class="" style="margin-bottom:6px; text-align: center;">
+          <h3 class="">Active Users</h3>
+        </div>
+        <div id="users">
+          <!--
+          <ul class="ul card-4">
+    <li class="w3-bar">
+      <img src="img_avatar2.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Mike</span><br>
+        <span>Web Designer</span>
+      </div>
+    </li>
+
+    <li class="w3-bar">
+      <img src="img_avatar5.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Jill</span><br>
+        <span>Support</span>
+      </div>
+    </li>
+
+    <li class="w3-bar">
+      <img src="img_avatar6.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <div class="w3-bar-item">
+        <span class="w3-large">Jane</span><br>
+        <span>Accountant</span>
+      </div>
+    </li>
+  </ul> -->
         </div>
     </div>
-    <div class="card-body">
-        <ul class="list-group" id="messages">
-        </ul>        
-    </div>
+  </form>
 </div>
 
-<div class="form-cnt fluid">
-   <form id="message-field">
-      <input class="message-input" placeholder="Message" id="message"/>
-      <button id="send_message" class="send-btn btn btn-light" type="submit">Send</button>
-   </form>
+
+    <div class="card chat-zone">
+        <div id="card-head" class="card-header">
+            <h3 class="mb-0 chat-heading" id="room-name"></h3>
+
+            <button class="user-list-btn" onclick="document.getElementById('id01').style.display='block'">See who's online
+            </button>
+
+            <div class="username-cont">
+                <form>
+                    <label class="user-heading">Your Username</label>
+                    <input id="username" class="form-control user-field" type="username" name="username" value="Username" onchange="set_username()">
+                </form>
+            </div>           
+
+        </div>
+    
+        <div class="card-body">
+            <ul class="list-group" id="messages"></ul>        
+        </div>
+
+        <div class="message-field-cnt">
+            <form id="message-field">
+                <input class="message-input" placeholder="Message" id="message" autofocus autocomplete="off">
+                <button id="send_message" class="send-btn btn btn-light" type="submit">Send</button>                
+            </form>
+            <button id="send_attachment" class="send-btn btn btn-light" onclick="send_att()">Send Attachment</button>
+            <!--
+            <button id="send_video" class="send-btn btn btn-light" onclick="send_vid_rec()">Send Video Recording</button>
+            <button id="send_voice" class="send-btn btn btn-light" onclick="send_aud_rec()">Send Audio Recording</button>
+            -->
+        </div>
+
+    </div>   
+
 </div>
 
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
@@ -40,7 +103,47 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/chat.js"></script>
     <script src="js/mustache.js"></script>
-    
+
+    <script id="message-template" type="text/template">
+        <li class="list-group-item" style="margin-bottom:6px;">
+                    <div class="media">
+                        <div></div>
+                        <div class="media-body">
+                            <div class="media" style="overflow:visible;">
+                                <div><img src="img/avatar_2x.png" class="mr-3" style="width: 25px; height:25px;"></div>
+                                <div class="media-body">
+                                    <div class="row">
+                                        <div id="message-details" class="col-md-8">
+                                            <div class="message__title"><strong>{{from}}</strong></div>
+                                            <div class="message__body">{{text}}<br></div> 
+                                            <small class="text-muted">{{date}} @ {{time}}</small>                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+    </script>
+
+    <script id="room-template" type="text/template">
+        <h4 class="mb-0 chat-heading">Chat Room: {{room_name}}</h4>
+    </script>    
+
+    <script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+        
 </body>
 
 </html>
