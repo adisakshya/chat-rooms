@@ -1,21 +1,20 @@
 // setup the application
 
-var express = require('express');
-var app = express();			// function handler used to supply an HTTP server
-const port = process.env.PORT || 3000;
-var http = require('http').Server(app); // HTTP server
-var io = require('socket.io')(http);
+const path = require('path');
+const http = require('http');
+const express = require('express');
+const socketIO = require('socket.io');
 
-const { Users } = require('./utilities/users');
+const { Users } = require('./utils/users');
+
+const publicPath = path.join(__dirname, '../public');
+const port = process.env.PORT || 3000;
+var app = express();
+var server = http.createServer(app);
+var io = socketIO(server);
 var users = new Users();
 
-app.use(express.static(__dirname + '/public'));
-
-// routes
-app.get('/', function(req, res){
-	// res.sendFile(__dirname + '/public/chat.html');
-	res.sendFile(__dirname + '/public/login.html');
-});
+app.use(express.static(publicPath));
 
 io.on('connection', function(socket){
 	
