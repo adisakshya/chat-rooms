@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="fonts/ionicons.min.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <link rel="stylesheet" type="text/css" href="css/users_list.css" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="css/w3.css">
 </head>
 
 <body>
@@ -18,15 +18,11 @@
     
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="">
-    <div class="imgcontainer">
-      <img src="my-room.jpg" />
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
-
+  <form class="modal-content animate">
     <div class="card">
         <div class="" style="margin-bottom:6px; text-align: center;">
-          <h3 class="">Active Users</h3>
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <h3 class="">Active Users</h3>
         </div>
         <div id="users">
           <!--
@@ -84,16 +80,16 @@
         <div class="message-field-cnt">
             <form id="message-field">
                 <input class="message-input" placeholder="Message" id="message" autofocus autocomplete="off">
-                <button id="send_message" class="send-btn btn btn-light" type="submit">Send</button>                
+                <button id="send_message" class="send-btn btn" type="submit">Send</button>
             </form>
-            <button id="send_attachment" class="send-btn btn btn-light" onclick="send_att()">Send Attachment</button>
             <!--
+            <button id="send_attachment" class="send-btn btn btn-light" onclick="send_att()">Send Attachment</button>
             <button id="send_video" class="send-btn btn btn-light" onclick="send_vid_rec()">Send Video Recording</button>
             <button id="send_voice" class="send-btn btn btn-light" onclick="send_aud_rec()">Send Audio Recording</button>
             -->
         </div>
 
-    </div>   
+    </div>
 
 </div>
 
