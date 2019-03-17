@@ -55,7 +55,12 @@ io.on('connection', function(socket){
 
 });
 
+/*
 // listen on local host port 5000
 http.listen(5000, function(){
 	console.log('listening on: 5000');
+});
+*/
+http.listen(port, () => {
+    console.log('Server is up on port ' + port);
 });
