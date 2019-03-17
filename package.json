@@ -1,5 +1,0 @@
-{
-  "name": "chat-rooms",
-  "version": "1.0.0",
-  "description": "Simple chat app built with node.js and socket.io",
-}
