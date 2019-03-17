@@ -80,7 +80,7 @@ $(function () {
             var li = jQuery('<li class="w3-bar"></li>');
             var avt = jQuery('<img src="img/avatar_2x.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">');
             var div = jQuery('<div class="w3-bar-item"></div>');
-            var span_name = jQuery('<span class="w3-large"></span></br>').html(user);
+            var span_name = jQuery('<span class="w3-large"></span>').html(user);
             // var span_description = jQuery('<span class="w3-large"></span>').html(description);
 
             div.append(span_name);
