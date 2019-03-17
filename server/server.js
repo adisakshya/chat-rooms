@@ -5,7 +5,7 @@ const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
 
-const { Users } = require('./utils/users');
+const { Users } = require('./utilities/users');
 
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
