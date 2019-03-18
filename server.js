@@ -2,8 +2,8 @@
 
 var express = require('express');
 var app = express();			// function handler used to supply an HTTP server
-const port = process.env.PORT || 5000;
-var http = require('http').Server(app); // HTTP server
+const http = require('http').Server(app); // HTTP server
+const port = process.env.PORT || 3000;
 var io = require('socket.io')(http);
 
 const { Users } = require('./utilities/users');
@@ -14,6 +14,7 @@ app.use(express.static(__dirname + '/public'));
 // routes
 app.get('/', function(req, res){
 	// res.sendFile(__dirname + '/public/chat.html');
+	res.stausCode = 200;
 	res.sendFile(__dirname + '/public/login.html');
 });
 
