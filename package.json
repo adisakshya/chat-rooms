@@ -1,5 +1,33 @@
 {
-  "name": "chat-rooms",
+  "name": "chat-room",
   "version": "1.0.0",
-  "description": "Simple chat app built with node.js and socket.io",
+  "description": "Simple Chat Rooms using express node.js and socket.io",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adisakshya/chat-rooms.git"
+  },
+  "keywords": [
+    "chatrooms",
+    "chat",
+    "rooms",
+    "group",
+    "chat",
+    "groupchat"
+  ],
+  "author": "Adisakshya Chauhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adisakshya/chat-rooms/issues"
+  },
+  "homepage": "https://github.com/adisakshya/chat-rooms#readme"
 }
